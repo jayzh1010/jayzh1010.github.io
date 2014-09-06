@@ -1,6 +1,6 @@
 title: ubuntu过期版本软件源的配置
 date: 2014-09-06 16:14:41
-tags:
+tags: [linux, ubuntu, apt-get]
 ---
 
 * 众所周之,ubuntu中软件的安装都是依赖于源,体现在命令中即`apt-get`.

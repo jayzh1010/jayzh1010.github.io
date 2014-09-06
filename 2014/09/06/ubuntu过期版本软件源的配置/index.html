@@ -4,22 +4,20 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>dns_address | JayLZhang&#39;s Blog</title>
+    <title>ubuntu过期版本软件源的配置 | JayLZhang&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="ZhangJL">
     
-    <meta name="description" content="国外公共DNS服务器地址
-　* Google Public DNS （8.8.8.8， 8.8.4.4）
-　* OpenDNS （208.67.222.222， 208.67.220.220）
-　* OpenDNS Family （208.67.222.123， 208.67.220.123）
-　*">
+    <meta name="description" content="众所周之,ubuntu中软件的安装都是依赖于源,体现在命令中即apt-get.
+ubuntu的版本分维护四年的lts版本及半年一更新的普通版本,ubuntu对于版本依赖的软件源的维护时间与版本时间相同.
+比如当14.04(Trusty Tahr)版本发行后, 13.10(Saucy Salamand">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="jayzh1010" />
-    <meta name="twitter:title" content="dns_address | JayLZhang&#39;s Blog" />
+    <meta name="twitter:title" content="ubuntu过期版本软件源的配置 | JayLZhang&#39;s Blog" />
       
     
     
@@ -76,15 +74,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/08/07/dns_address/" title="dns_address" itemprop="url">dns_address</a>
+      <a href="/2014/09/06/ubuntu过期版本软件源的配置/" title="ubuntu过期版本软件源的配置" itemprop="url">ubuntu过期版本软件源的配置</a>
   </h1>
   <p class="article-author">By
     
       <a href="jayzh1010.github.io" title="ZhangJL">ZhangJL</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-08-07T08:48:46.000Z" itemprop="datePublished">Aug 7 2014</time>
-    Updated:<time datetime="2014-09-06T08:46:30.000Z" itemprop="dateModified">Sep 6 2014</time>
+    <time datetime="2014-09-06T08:14:41.000Z" itemprop="datePublished">Sep 6 2014</time>
+    Updated:<time datetime="2014-09-06T08:50:12.000Z" itemprop="dateModified">Sep 6 2014</time>
     
   </p>
 </header>
@@ -93,54 +91,30 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#国外公共DNS服务器地址"><span class="toc-number">1.</span> <span class="toc-text">国外公共DNS服务器地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#国内公共DNS服务器地址"><span class="toc-number">2.</span> <span class="toc-text">国内公共DNS服务器地址</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#此时有两种方式来解决此问题"><span class="toc-number">1.</span> <span class="toc-text">此时有两种方式来解决此问题</span></a></li></ol>
 		</div>
 		
-		<h3 id="国外公共DNS服务器地址">国外公共DNS服务器地址</h3>
-<p>　* Google Public DNS （8.8.8.8， 8.8.4.4）</p>
-<p>　* OpenDNS （208.67.222.222， 208.67.220.220）</p>
-<p>　* OpenDNS Family （208.67.222.123， 208.67.220.123）</p>
-<p>　* V2EX DNS （199.91.73.222， 178.79.131.110）</p>
-<p>　* Dyn DNS （216.146.35.35， 216.146.36.36）</p>
-<p>　* Comodo Secure (8.26.56.26， 8.20.247.20)</p>
-<ul>
-<li>UltraDNS （156.154.70.1， 156.154.71.1）</li>
+		<ul>
+<li>众所周之,ubuntu中软件的安装都是依赖于源,体现在命令中即<code>apt-get</code>.</li>
+<li>ubuntu的版本分维护四年的lts版本及半年一更新的普通版本,ubuntu对于版本依赖的软件源的维护时间与版本时间相同.</li>
+<li>比如当14.04(Trusty Tahr)版本发行后, 13.10(Saucy Salamander)版本及软件源官方即不再维护</li>
+<li>如果你还在使用13.10版本时,在使用apt-get update时会报404 nout found.</li>
 </ul>
-<p>　* Norton ConnectSafe (199.85.126.10, 199.85.127.10)</p>
-<h3 id="国内公共DNS服务器地址">国内公共DNS服务器地址</h3>
-<ul>
-<li><p>OneDNS  （112.124.47.27）</p>
-</li>
-<li><p>OpenerDNS（42.120.21.30）</p>
-</li>
-<li><p>aliDNS （223.5.5.5， 223.6.6.6）</p>
-</li>
-<li><p>114DNS （114.114.114.114， 114.114.115.115）</p>
-</li>
-<li><p>114DNS安全版 （114.114.114.119， 114.114.115.119）</p>
-</li>
-<li><p>114DNS家庭版 （114.114.114.110， 114.114.115.110）</p>
-</li>
-<li><p>Dns派：电信/移动/铁通 （101.226.4.6， 218.30.118.6）</p>
-</li>
-<li><p>Dns派：联通 （123.125.81.6， 140.207.198.6）</p>
-</li>
-</ul>
+<h6 id="此时有两种方式来解决此问题">此时有两种方式来解决此问题</h6>
+<ol>
+<li>cd /etc/apt; sudo vim source.list; 将其中的saucy替换为trusty.此种改变有可能会引起一些未知问题,因为软件源是与发行版本相对应的.</li>
+<li>cd /etc/apt; sudo vim source.list; 将其中的cn.archive.和security.替换为old-releases.; 可完美解决软件源的问题</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/dns/">dns</a><a href="/tags/gfw/">gfw</a>
-  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="jayzh1010.github.io/2014/08/07/dns_address/" data-title="dns_address | JayLZhang&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="jayzh1010.github.io/2014/09/06/ubuntu过期版本软件源的配置/" data-title="ubuntu过期版本软件源的配置 | JayLZhang&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -149,19 +123,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/09/06/ubuntu过期版本软件源的配置/" title="ubuntu过期版本软件源的配置">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  ubuntu过期版本软件源的配置</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/08/05/first_post/"  title="first_post">
+<a href="/2014/08/07/dns_address/"  title="dns_address">
  <strong>NEXT:</strong><br/> 
- <span>first_post
+ <span>dns_address
 </span>
 </a>
 </div>
@@ -174,7 +140,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#国外公共DNS服务器地址"><span class="toc-number">1.</span> <span class="toc-text">国外公共DNS服务器地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#国内公共DNS服务器地址"><span class="toc-number">2.</span> <span class="toc-text">国内公共DNS服务器地址</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#此时有两种方式来解决此问题"><span class="toc-number">1.</span> <span class="toc-text">此时有两种方式来解决此问题</span></a></li></ol>
   </div>
 
 <div id="asidepart">

@@ -4,5 +4,5 @@
 	bare = false
 	logallrefupdates = true
 [branch "master"]
-	remote = https://github.com/jayzh1010/jayzh1010.github.io.git
+	remote = git@github.com:jayzh1010/jayzh1010.github.io.git
 	merge = refs/heads/master

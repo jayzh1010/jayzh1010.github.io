@@ -4,22 +4,20 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>dns_address | JayLZhang&#39;s Blog</title>
+    <title>lua连接mysql | JayLZhang&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="ZhangJL">
     
-    <meta name="description" content="国外公共DNS服务器地址
-　* Google Public DNS （8.8.8.8， 8.8.4.4）
-　* OpenDNS （208.67.222.222， 208.67.220.220）
-　* OpenDNS Family （208.67.222.123， 208.67.220.123）
-　*">
+    <meta name="description" content="my summary of using luasql
+basic method
+123456789101112131415161718local luasql = require &#39;luasql.mysql&#39;local db_env = luasql.mysql()local db_conn = d">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="jayzh1010" />
-    <meta name="twitter:title" content="dns_address | JayLZhang&#39;s Blog" />
+    <meta name="twitter:title" content="lua连接mysql | JayLZhang&#39;s Blog" />
       
     
     
@@ -76,15 +74,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/08/07/dns_address/" title="dns_address" itemprop="url">dns_address</a>
+      <a href="/2015/01/17/lua连接mysql/" title="lua连接mysql" itemprop="url">lua连接mysql</a>
   </h1>
   <p class="article-author">By
     
       <a href="jayzh1010.github.io" title="ZhangJL">ZhangJL</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-08-07T08:48:46.000Z" itemprop="datePublished">Aug 7 2014</time>
-    Updated:<time datetime="2015-01-17T06:27:33.000Z" itemprop="dateModified">Jan 17 2015</time>
+    <time datetime="2015-01-17T06:43:04.000Z" itemprop="datePublished">Jan 17 2015</time>
+    Updated:<time datetime="2015-01-17T06:47:42.000Z" itemprop="dateModified">Jan 17 2015</time>
     
   </p>
 </header>
@@ -93,46 +91,23 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#国外公共DNS服务器地址"><span class="toc-number">1.</span> <span class="toc-text">国外公共DNS服务器地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#国内公共DNS服务器地址"><span class="toc-number">2.</span> <span class="toc-text">国内公共DNS服务器地址</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#my_summary_of_using_luasql"><span class="toc-number">1.</span> <span class="toc-text">my summary of using luasql</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#basic_method"><span class="toc-number">1.1.</span> <span class="toc-text">basic method</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#luasql_also_support_the_transation"><span class="toc-number">1.1.1.</span> <span class="toc-text">luasql also support the transation</span></a></li></ol></li></ol></li></ol>
 		</div>
 		
-		<h3 id="国外公共DNS服务器地址">国外公共DNS服务器地址</h3>
-<p>　* Google Public DNS （8.8.8.8， 8.8.4.4）</p>
-<p>　* OpenDNS （208.67.222.222， 208.67.220.220）</p>
-<p>　* OpenDNS Family （208.67.222.123， 208.67.220.123）</p>
-<p>　* V2EX DNS （199.91.73.222， 178.79.131.110）</p>
-<p>　* Dyn DNS （216.146.35.35， 216.146.36.36）</p>
-<p>　* Comodo Secure (8.26.56.26， 8.20.247.20)</p>
-<ul>
-<li>UltraDNS （156.154.70.1， 156.154.71.1）</li>
-</ul>
-<p>　* Norton ConnectSafe (199.85.126.10, 199.85.127.10)</p>
-<h3 id="国内公共DNS服务器地址">国内公共DNS服务器地址</h3>
-<ul>
-<li><p>OneDNS  （112.124.47.27）</p>
-</li>
-<li><p>OpenerDNS（42.120.21.30）</p>
-</li>
-<li><p>aliDNS （223.5.5.5， 223.6.6.6）</p>
-</li>
-<li><p>114DNS （114.114.114.114， 114.114.115.115）</p>
-</li>
-<li><p>114DNS安全版 （114.114.114.119， 114.114.115.119）</p>
-</li>
-<li><p>114DNS家庭版 （114.114.114.110， 114.114.115.110）</p>
-</li>
-<li><p>Dns派：电信/移动/铁通 （101.226.4.6， 218.30.118.6）</p>
-</li>
-<li><p>Dns派：联通 （123.125.81.6， 140.207.198.6）</p>
-</li>
-</ul>
+		<h3 id="my_summary_of_using_luasql">my summary of using luasql</h3>
+<h4 id="basic_method">basic method</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">local luasql = require 'luasql.mysql'</div><div class="line">local db_env = luasql.mysql()</div><div class="line">local db_conn = db_env:connect(db_name, db_user, db_password, db_ip, db_port)</div><div class="line">local cur = db_conn:execute('this is the sql syntax')</div><div class="line"></div><div class="line">-<span class="ruby">- <span class="keyword">case</span> <span class="symbol">insert:</span> cur will be the number of the record which was been affected <span class="keyword">or</span> <span class="keyword">nil</span></span></div><div class="line">-<span class="ruby">- <span class="keyword">case</span> <span class="symbol">query:</span> cur wiil be userdata <span class="keyword">and</span> row be table</span></div><div class="line"></div><div class="line">local row = cur:fetch({}, flag)</div><div class="line">-<span class="ruby">- the flag can be <span class="string">"a"</span>  <span class="keyword">or</span> <span class="string">"n"</span></span></div><div class="line">-<span class="ruby">- <span class="keyword">case</span> <span class="symbol">a:</span> the index wiil be string <span class="keyword">or</span> <span class="keyword">nil</span></span></div><div class="line">-<span class="ruby">- <span class="keyword">case</span> <span class="symbol">n:</span> the index will be number <span class="keyword">or</span> <span class="keyword">nil</span></span></div><div class="line"></div><div class="line">cur:close()</div><div class="line">-<span class="ruby">- <span class="keyword">if</span> the cur is number, should <span class="keyword">not</span> close this cur</span></div><div class="line"></div><div class="line">db_conn:close()</div><div class="line">db_env:close()</div></pre></td></tr></table></figure>
+
+<h5 id="luasql_also_support_the_transation">luasql also support the transation</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db_conn:setautocommit(false)</div><div class="line">cur == db_conn:<span class="operator"><span class="keyword">execute</span>(<span class="string">"this is the sql syntax"</span>)</span></div><div class="line"><span class="keyword">if</span> cur == nil <span class="keyword">then</span> db_conn:<span class="keyword">rollback</span>() <span class="keyword">end</span></div><div class="line">cur == db_conn:<span class="keyword">execute</span>(<span class="string">"this is the sql syntax"</span>)</div><div class="line"><span class="keyword">if</span> cur == nil <span class="keyword">then</span> db_conn:<span class="keyword">rollback</span>() <span class="keyword">end</span></div><div class="line">db_conn:<span class="keyword">commit</span>()</div></pre></td></tr></table></figure>
+
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/dns/">dns</a><a href="/tags/gfw/">gfw</a>
+  <span></span> <a href="/tags/lua/">lua</a><a href="/tags/mysql/">mysql</a>
   </div>
 
 
@@ -140,7 +115,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="jayzh1010.github.io/2014/08/07/dns_address/" data-title="dns_address | JayLZhang&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="jayzh1010.github.io/2015/01/17/lua连接mysql/" data-title="lua连接mysql | JayLZhang&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -150,18 +125,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2014/09/06/ubuntu过期版本软件源的配置/" title="ubuntu过期版本软件源的配置">
+ <a href="/2015/01/17/git基础/" title="git基础">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  ubuntu过期版本软件源的配置</span>
+  git基础</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2014/08/05/first_post/"  title="first_post">
+<a href="/2014/09/06/ubuntu过期版本软件源的配置/"  title="ubuntu过期版本软件源的配置">
  <strong>NEXT:</strong><br/> 
- <span>first_post
+ <span>ubuntu过期版本软件源的配置
 </span>
 </a>
 </div>
@@ -174,7 +149,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#国外公共DNS服务器地址"><span class="toc-number">1.</span> <span class="toc-text">国外公共DNS服务器地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#国内公共DNS服务器地址"><span class="toc-number">2.</span> <span class="toc-text">国内公共DNS服务器地址</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#my_summary_of_using_luasql"><span class="toc-number">1.</span> <span class="toc-text">my summary of using luasql</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#basic_method"><span class="toc-number">1.1.</span> <span class="toc-text">basic method</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#luasql_also_support_the_transation"><span class="toc-number">1.1.1.</span> <span class="toc-text">luasql also support the transation</span></a></li></ol></li></ol></li></ol>
   </div>
 
 <div id="asidepart">

@@ -4,22 +4,21 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>dns_address | JayLZhang&#39;s Blog</title>
+    <title>git基础 | JayLZhang&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="ZhangJL">
     
-    <meta name="description" content="国外公共DNS服务器地址
-　* Google Public DNS （8.8.8.8， 8.8.4.4）
-　* OpenDNS （208.67.222.222， 208.67.220.220）
-　* OpenDNS Family （208.67.222.123， 208.67.220.123）
-　*">
+    <meta name="description" content="简介
+git是linus大神在linux kernel后的又一个牛逼的项目
+git很强大，功能很多，如果有兴趣研究，推荐，很厚的一本书，里面有 git 的各种操作，以及在本地搭建 git 服务器和用 gerrit 做 review 等等
+很多人在搜索git与svn的时候，会在网上看到说git是分布式">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="jayzh1010" />
-    <meta name="twitter:title" content="dns_address | JayLZhang&#39;s Blog" />
+    <meta name="twitter:title" content="git基础 | JayLZhang&#39;s Blog" />
       
     
     
@@ -76,15 +75,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/08/07/dns_address/" title="dns_address" itemprop="url">dns_address</a>
+      <a href="/2015/01/17/git基础/" title="git基础" itemprop="url">git基础</a>
   </h1>
   <p class="article-author">By
     
       <a href="jayzh1010.github.io" title="ZhangJL">ZhangJL</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-08-07T08:48:46.000Z" itemprop="datePublished">Aug 7 2014</time>
-    Updated:<time datetime="2015-01-17T06:27:33.000Z" itemprop="dateModified">Jan 17 2015</time>
+    <time datetime="2015-01-17T06:50:16.000Z" itemprop="datePublished">Jan 17 2015</time>
+    Updated:<time datetime="2015-01-17T06:58:01.000Z" itemprop="dateModified">Jan 17 2015</time>
     
   </p>
 </header>
@@ -93,46 +92,57 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#国外公共DNS服务器地址"><span class="toc-number">1.</span> <span class="toc-text">国外公共DNS服务器地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#国内公共DNS服务器地址"><span class="toc-number">2.</span> <span class="toc-text">国内公共DNS服务器地址</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的命令有"><span class="toc-number">2.</span> <span class="toc-text">常用的命令有</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多个branch操作："><span class="toc-number">3.</span> <span class="toc-text">多个branch操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#版本控制相关操作："><span class="toc-number">4.</span> <span class="toc-text">版本控制相关操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地自建repo："><span class="toc-number">5.</span> <span class="toc-text">本地自建repo：</span></a></li></ol>
 		</div>
 		
-		<h3 id="国外公共DNS服务器地址">国外公共DNS服务器地址</h3>
-<p>　* Google Public DNS （8.8.8.8， 8.8.4.4）</p>
-<p>　* OpenDNS （208.67.222.222， 208.67.220.220）</p>
-<p>　* OpenDNS Family （208.67.222.123， 208.67.220.123）</p>
-<p>　* V2EX DNS （199.91.73.222， 178.79.131.110）</p>
-<p>　* Dyn DNS （216.146.35.35， 216.146.36.36）</p>
-<p>　* Comodo Secure (8.26.56.26， 8.20.247.20)</p>
+		<h3 id="简介">简介</h3>
+<p>git是linus大神在linux kernel后的又一个牛逼的项目</p>
+<p>git很强大，功能很多，如果有兴趣研究，推荐<git权威指南>，很厚的一本书，里面有 git 的各种操作，以及在本地搭建 git 服务器和用 gerrit 做 review 等等</git权威指南></p>
+<p>很多人在搜索git与svn的时候，会在网上看到说git是分布式的。嗯，这个是对的，但是大多数情况下我们还是一个remote repo多个local repo这种比较常见。<br>remote repo在我们这边指的就是 github 上托管的某个项目。</p>
+<p>一个git repo中包括有几种类型的文件。1）untracked。2）tracked but not modified。3）tracked, modified, staged。 4）tracked, modified but not staged。5）在 .gitignore中被ignore的文件<br>首先用 git clone <repository>  <directory>；</directory></repository></p>
+<p>repository指的是项目的地址，可以是git协议，或者https，协议，也可以是文件协议等等。执行完后会在当前目录生成一个目录，directory是选填的，如果不填，则目录名即repository的名字，否则为         directory的名字</p>
+<h3 id="常用的命令有">常用的命令有</h3>
 <ul>
-<li>UltraDNS （156.154.70.1， 156.154.71.1）</li>
+<li>git status： 查看当前repo中的所有文件状态（看不到被 5）被ignore的文件）</li>
+<li>git log: 查看提交的历史</li>
+<li>git add :  可以把未被跟踪的文件加入跟踪，或者把已被跟踪且修改的文件变为待提交的。1)–&gt;3);   4)—&gt;3)</li>
+<li>git checkout COMMIT – PATH： 将COMMIT这次COMMIT中的某个文件检到本地工作区，一般经常用来还原某个修改过但想去掉修改的文件</li>
+<li>git commit：把待提交的文件提交到本地repo</li>
+<li>git reset: 还原到某次提交，可以只还原提交，也可以同时还原提交和改动的文件，有三个较常用的可选参数 —soft, —mixed, —hard，默认是–mixed</li>
+<li>git pull：通过远程的repo来更新本地的repo</li>
+<li>git push: 将本地的repo更新到远程的repo</li>
+<li>上述几个命令基本可以满足单个branch的开发需要</li>
 </ul>
-<p>　* Norton ConnectSafe (199.85.126.10, 199.85.127.10)</p>
-<h3 id="国内公共DNS服务器地址">国内公共DNS服务器地址</h3>
+<h3 id="多个branch操作：">多个branch操作：</h3>
 <ul>
-<li><p>OneDNS  （112.124.47.27）</p>
-</li>
-<li><p>OpenerDNS（42.120.21.30）</p>
-</li>
-<li><p>aliDNS （223.5.5.5， 223.6.6.6）</p>
-</li>
-<li><p>114DNS （114.114.114.114， 114.114.115.115）</p>
-</li>
-<li><p>114DNS安全版 （114.114.114.119， 114.114.115.119）</p>
-</li>
-<li><p>114DNS家庭版 （114.114.114.110， 114.114.115.110）</p>
-</li>
-<li><p>Dns派：电信/移动/铁通 （101.226.4.6， 218.30.118.6）</p>
-</li>
-<li><p>Dns派：联通 （123.125.81.6， 140.207.198.6）</p>
-</li>
+<li>git branch: 查看本的所有branch，加上 -a 可以查看到远程的branch</li>
+<li>git merge a b: 把branch a的合并到branch b，可能出现冲突。但是branch a不发生变化</li>
+<li>git rebase x: 去掉当前branch与branch x的分歧，可能出现冲突。功能与merge相似，一般用在某个feature的分支中对master做rebase</li>
+<li>git checkout y: 切换到branch y</li>
+<li>git checkout -b z: 根据当前分支生成新branch z，并直接切换到branch z</li>
 </ul>
+<h3 id="版本控制相关操作：">版本控制相关操作：</h3>
+<ul>
+<li>git tag: 有多个参数来做</li>
+<li>git tag -a tagname COMMIT: 生成annoated的tag, COMMIT选填，如果不填，则为当前的commit</li>
+<li>git tag -d tagname: 删除tagname这个tag</li>
+<li>git checkout tagname: 切换到tagname这个tag所在的commit</li>
+<li>git push —tags: 将本的的所有tag推送到远程repo</li>
+</ul>
+<h3 id="本地自建repo：">本地自建repo：</h3>
+<ul>
+<li>git init: 初始化一个repo，可以加—bare来生成一个只记录信息没有文件的repo</li>
+</ul>
+<blockquote>
+<p>本人能力有限，表达不太清楚，如果有问题可以互相交流学习(jayzh1010@gmail.com || jieliang.zhang@ele.me)<br>网上也有很多的git教程，写的也都比较详细<br>其实最有用的文档都在电脑上，善用man和–help<br>如:<br>git checkout —hlep<br>git tag —help<br>git init —help</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/dns/">dns</a><a href="/tags/gfw/">gfw</a>
+  <span></span> <a href="/tags/git/">git</a><a href="/tags/code/">code</a>
   </div>
 
 
@@ -140,7 +150,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="jayzh1010.github.io/2014/08/07/dns_address/" data-title="dns_address | JayLZhang&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="jayzh1010.github.io/2015/01/17/git基础/" data-title="git基础 | JayLZhang&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -149,19 +159,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/09/06/ubuntu过期版本软件源的配置/" title="ubuntu过期版本软件源的配置">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  ubuntu过期版本软件源的配置</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/08/05/first_post/"  title="first_post">
+<a href="/2015/01/17/lua连接mysql/"  title="lua连接mysql">
  <strong>NEXT:</strong><br/> 
- <span>first_post
+ <span>lua连接mysql
 </span>
 </a>
 </div>
@@ -174,7 +176,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#国外公共DNS服务器地址"><span class="toc-number">1.</span> <span class="toc-text">国外公共DNS服务器地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#国内公共DNS服务器地址"><span class="toc-number">2.</span> <span class="toc-text">国内公共DNS服务器地址</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的命令有"><span class="toc-number">2.</span> <span class="toc-text">常用的命令有</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多个branch操作："><span class="toc-number">3.</span> <span class="toc-text">多个branch操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#版本控制相关操作："><span class="toc-number">4.</span> <span class="toc-text">版本控制相关操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地自建repo："><span class="toc-number">5.</span> <span class="toc-text">本地自建repo：</span></a></li></ol>
   </div>
 
 <div id="asidepart">

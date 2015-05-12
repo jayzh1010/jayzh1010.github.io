@@ -57,7 +57,7 @@ fancybox: false
 #### Author information
 author:
   google_plus:    ## eg:116338260303228776998 for https://plus.google.com/u/0/116338260303228776998
-  intro_line1: "hello, I'm zhan jie liang, a developing engineer" ## eg: "Hello ,I'm Larry Page in Google."
+  intro_line1: "hello, I'm zhang jie liang, a developing engineer" ## eg: "Hello ,I'm Larry Page in Google."
   intro_line2: "skill: linux, c/c++, vim, lua," ## eg: "This is my blog,believe it or not."
   weibo:      3158887530
   twitter:    jayzh1010

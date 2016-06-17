@@ -1,4 +1,3 @@
-layout: translation
 title: RulesEngine
 date: 2016-06-17 13:30:27
 tags: [dsl, rule engine]

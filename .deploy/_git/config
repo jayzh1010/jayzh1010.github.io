@@ -1,8 +1,0 @@
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[branch "master"]
-	remote = git@github.com:jayzh1010/jayzh1010.github.io.git
-	merge = refs/heads/master
